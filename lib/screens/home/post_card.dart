@@ -20,31 +20,46 @@ class PostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      child: Container(
-        padding: EdgeInsets.all(10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Column(
+    return Ink(
+      padding: const EdgeInsets.all(16),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        border: Border(
+          bottom: BorderSide(color: Colors.grey, width: 0.5),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 4,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CircleAvatar(
+                backgroundImage: NetworkImage(profilePicture),
+                radius: 15,
+              ),
+            ],
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          Expanded(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  backgroundImage: NetworkImage(profilePicture),
-                  radius: 15,
-                ),
-              ],
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
+                Wrap(
+                  alignment: WrapAlignment.start,
+                  crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
                     Text(
                       username,
@@ -56,37 +71,42 @@ class PostCard extends StatelessWidget {
                     ),
                     Text(
                       '3 hr ago',
-                      style: TextStyle(color: Colors.grey[600], fontSize: 12),
+                      style: TextStyle(color: Colors.grey[600], fontSize: 14),
                     ),
                     const SizedBox(
                       width: 5,
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 2, horizontal: 10),
+                          horizontal: 10, vertical: 2),
                       decoration: BoxDecoration(
-                        color: Colors.blue[100],
+                        color: const Color(0xFFDBEAFE),
                         borderRadius: BorderRadius.circular(50),
+                        border: Border.all(color: Colors.transparent),
                       ),
                       child: Text(
-                        college,
-                        style:
-                            const TextStyle(color: Colors.blue, fontSize: 12),
+                        '🎓 $college',
+                        style: TextStyle(
+                          color: Colors.blue[800],
+                          fontSize: 12,
+                        ),
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Text(
                   postContent,
                   style: const TextStyle(
                     fontSize: 16,
                   ),
+                  softWrap: true,
+                  overflow: TextOverflow.visible,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 12,
                 ),
                 Row(
                   children: tags
@@ -95,13 +115,17 @@ class PostCard extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
-                              color: Colors.blue[100],
+                              border: Border.all(
+                                color: Colors.grey[500]!,
+                                width: 0.5,
+                              ),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
                               tag,
                               style: const TextStyle(
-                                color: Colors.blue,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500,
                                 fontSize: 12,
                               ),
                             ),
@@ -109,57 +133,57 @@ class PostCard extends StatelessWidget {
                       .toList(),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 8,
                 ),
                 Row(
                   children: [
-                    const Icon(
-                      Icons.thumb_up,
-                      size: 16,
-                      color: Colors.blue,
+                    Icon(
+                      Icons.keyboard_arrow_up_rounded,
+                      size: 24,
+                      color: Colors.green[600],
                     ),
                     const SizedBox(width: 5),
                     Text(
                       likes.toString(),
                       style: const TextStyle(
                         fontSize: 14,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                     const SizedBox(width: 20),
-                    const Icon(
-                      Icons.thumb_down,
-                      size: 16,
-                      color: Colors.blue,
+                    Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      size: 24,
+                      color: Colors.red[600],
                     ),
                     const SizedBox(width: 5),
                     const Text(
                       '20',
                       style: TextStyle(
                         fontSize: 14,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                     const SizedBox(width: 20),
-                    const Icon(
-                      Icons.comment,
-                      size: 16,
-                      color: Colors.blue,
+                    Icon(
+                      Icons.bubble_chart_outlined,
+                      size: 24,
+                      color: Colors.grey[800],
                     ),
                     const SizedBox(width: 5),
                     const Text(
                       '20',
                       style: TextStyle(
                         fontSize: 14,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ],
                 )
               ],
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

@@ -14,9 +14,14 @@ class MyApp extends StatelessWidget {
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromARGB(255, 245, 245, 245),
+        // splashFactory: InkRipple.splashFactory,
+        splashColor: Colors.blue.withOpacity(0.2),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+        ),
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: Colors.white,
         colorScheme: const ColorScheme.light(
-          background: Colors.white,
           surface: Colors.white,
         ),
         useMaterial3: true,
