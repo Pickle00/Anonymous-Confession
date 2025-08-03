@@ -12,14 +12,30 @@ class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Notifications'),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        iconTheme: const IconThemeData(color: Colors.black),
+        elevation: 1,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             NotificationCard(
-                title: 'This is a tite',
-                preview: 'This is preview',
-                university: 'MIT',
-                timeAgo: '3h ago'),
+              authorName: 'Study Buddy',
+              authorTag: 'HELPER',
+              authorTagColor: Colors.green,
+              timeAgo: '2h ago',
+              mainComment:
+                  "Does anyone have tips for managing time during finals?",
+              onMarkAsRead: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Marked as read')),
+                );
+              },
+            ),
           ],
         ),
       ),

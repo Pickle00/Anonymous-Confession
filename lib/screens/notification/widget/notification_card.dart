@@ -1,118 +1,177 @@
 import 'package:flutter/material.dart';
 
 class NotificationCard extends StatelessWidget {
-  final String title;
-  final String preview;
-  final String university;
-  final String? comment;
+  final String authorName;
+  final String? authorTag;
   final String timeAgo;
-  final bool isComment;
+  final String mainComment;
+  final String? replyComment;
+  final VoidCallback? onMarkAsRead;
+  final Color backgroundColor;
+  final Color authorTagColor;
+  final IconData? authorIcon;
 
   const NotificationCard({
-    super.key,
-    required this.title,
-    required this.preview,
-    required this.university,
-    this.comment,
+    Key? key,
+    required this.authorName,
+    this.authorTag,
     required this.timeAgo,
-    this.isComment = false,
-  });
+    required this.mainComment,
+    this.replyComment,
+    this.onMarkAsRead,
+    this.backgroundColor = Colors.white,
+    this.authorTagColor = Colors.blue,
+    this.authorIcon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.shade300),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            spreadRadius: 1,
+            blurRadius: 4,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// Top row: title + time ago
+          // Header row with author info and timestamp
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (isComment)
-                const Icon(Icons.chat_bubble_outline,
-                    size: 20, color: Colors.blue)
-              else
-                const Icon(Icons.expand_less, size: 20, color: Colors.green),
-              const SizedBox(width: 6),
-              Expanded(
-                child: Text(
-                  title,
-                  style: const TextStyle(fontWeight: FontWeight.w600),
+              // Profile icon
+              Container(
+                width: 24,
+                height: 24,
+                decoration: BoxDecoration(
+                  color: Colors.blue.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  authorIcon ?? Icons.person,
+                  size: 16,
+                  color: Colors.blue,
                 ),
               ),
-              const SizedBox(width: 6),
+              const SizedBox(width: 8),
+
+              // Author name and tag
+              Expanded(
+                child: RichText(
+                  text: TextSpan(
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    children: [
+                      TextSpan(text: authorName),
+                      if (authorTag != null) ...[
+                        const TextSpan(text: ' '),
+                        TextSpan(
+                          text: authorTag!,
+                          style: TextStyle(
+                            color: authorTagColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ),
+
+              // Timestamp
               Text(
                 timeAgo,
-                style: const TextStyle(color: Colors.grey, fontSize: 12),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.grey[600],
+                ),
               ),
             ],
           ),
 
           const SizedBox(height: 12),
 
-          /// Quote preview
+          // Main comment
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.grey.shade100,
+              color: Colors.yellow.withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
+              border: Border.all(
+                color: Colors.yellow.withOpacity(0.3),
+                width: 1,
+              ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                /// Preview
-                Text(
-                  '"$preview..."',
-                  style: const TextStyle(color: Colors.black87),
-                ),
-                const SizedBox(height: 4),
-
-                /// University pill
-                Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Text(
-                    university,
-                    style: const TextStyle(fontSize: 12),
-                  ),
-                ),
-
-                /// Optional comment
-                if (comment != null) ...[
-                  const SizedBox(height: 12),
-                  Text(
-                    '“$comment”',
-                    style: const TextStyle(
-                      color: Colors.blue,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                ]
-              ],
-            ),
-          ),
-
-          const SizedBox(height: 8),
-          GestureDetector(
-            onTap: () {},
-            child: const Text(
-              'Mark as read',
-              style: TextStyle(
-                color: Colors.blue,
-                fontWeight: FontWeight.w500,
+            child: Text(
+              mainComment,
+              style: const TextStyle(
+                fontSize: 14,
+                color: Colors.black87,
+                fontStyle: FontStyle.italic,
               ),
             ),
           ),
+
+          // Reply comment (if exists)
+          if (replyComment != null) ...[
+            const SizedBox(height: 8),
+            Container(
+              margin: const EdgeInsets.only(left: 16),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.withOpacity(0.05),
+                borderRadius: BorderRadius.circular(8),
+                border: Border(
+                  left: BorderSide(
+                    color: Colors.blue.withOpacity(0.3),
+                    width: 3,
+                  ),
+                ),
+              ),
+              child: Text(
+                replyComment!,
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: Colors.black87,
+                ),
+              ),
+            ),
+          ],
+
+          // Mark as read button
+          if (onMarkAsRead != null) ...[
+            const SizedBox(height: 12),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton(
+                onPressed: onMarkAsRead,
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 0),
+                  minimumSize: Size.zero,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                child: const Text(
+                  'Mark as read',
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );
