@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // splashFactory: InkRipple.splashFactory,
-        splashColor: Colors.blue.withOpacity(0.2),
+        splashColor: Colors.grey.withOpacity(0.2),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
         ),
