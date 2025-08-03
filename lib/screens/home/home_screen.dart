@@ -88,6 +88,8 @@ class _HomeScreenState extends State<HomeScreen> {
           isSelected ? Colors.black : Colors.grey,
           BlendMode.srcIn,
         ),
+        height: 20,
+        width: 20,
       ),
       // Icon(
       //   icon,
