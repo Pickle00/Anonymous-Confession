@@ -1,7 +1,10 @@
+import 'package:confesso/models/model.dart';
 import 'package:confesso/router/router_path.dart';
 import 'package:confesso/screens/create_post/create_post.dart';
 import 'package:confesso/screens/home/home_screen.dart';
 import 'package:confesso/screens/home/post_screen.dart';
+import 'package:confesso/screens/login/auth_screen.dart';
+import 'package:confesso/screens/onboarding/onboarding.dart';
 import 'package:go_router/go_router.dart';
 
 List<GoRoute> buildRoutes() {
@@ -24,7 +27,22 @@ List<GoRoute> buildRoutes() {
       name: AppRoutes.postScreen,
       path: AppRoutes.postScreen,
       builder: (context, state) {
-        return const PostScreen();
+        final postData = state.extra as PostModel;
+        return PostScreen(postData: postData);
+      },
+    ),
+    GoRoute(
+      path: AppRoutes.onBoardingScreen,
+      name: AppRoutes.onBoardingScreen,
+      builder: (context, state) {
+        return const OnBoardingScreen();
+      },
+    ),
+    GoRoute(
+      path: AppRoutes.authScreen,
+      name: AppRoutes.authScreen,
+      builder: (context, state) {
+        return const SignupScreen();
       },
     ),
   ];

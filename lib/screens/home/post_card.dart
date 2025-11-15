@@ -1,25 +1,46 @@
+import 'dart:math';
+
+import 'package:confesso/blocs/homepage_cubit/homepage_cubit.dart';
+import 'package:confesso/models/model.dart';
+import 'package:confesso/theme/post_college_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 class PostCard extends StatelessWidget {
+  final String id;
   final String username;
   final String profilePicture;
   final String postContent;
   final List<String> tags;
   final String college;
   final int likes;
-  final List<Map<String, String>> comments;
-  const PostCard(
-      {super.key,
-      required this.username,
-      required this.profilePicture,
-      required this.postContent,
-      required this.tags,
-      required this.college,
-      required this.likes,
-      required this.comments});
+  final List<CommentModel> comments;
+  final List<Attachment> attachments;
+  final int disLikes;
+  final DateTime createdAt;
+  const PostCard({
+    super.key,
+    required this.id,
+    required this.username,
+    required this.profilePicture,
+    required this.postContent,
+    required this.tags,
+    required this.college,
+    required this.likes,
+    required this.comments,
+    required this.disLikes,
+    required this.attachments,
+    required this.createdAt,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final randomPair = colorPairs[Random().nextInt(colorPairs.length)];
+    final bgColor = hexToColor(randomPair['bg']!);
+    final textColor = hexToColor(randomPair['text']!);
+
+    final timeAgo = timeago.format(createdAt);
     return Ink(
       padding: const EdgeInsets.all(16),
       decoration: const BoxDecoration(
@@ -27,13 +48,6 @@ class PostCard extends StatelessWidget {
         border: Border(
           bottom: BorderSide(color: Colors.grey, width: 0.5),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 4,
-            offset: Offset(0, 2),
-          ),
-        ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -70,7 +84,7 @@ class PostCard extends StatelessWidget {
                       width: 5,
                     ),
                     Text(
-                      '3 hr ago',
+                      timeAgo,
                       style: TextStyle(color: Colors.grey[600], fontSize: 14),
                     ),
                     const SizedBox(
@@ -80,14 +94,14 @@ class PostCard extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 2),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFDBEAFE),
+                        color: bgColor,
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(color: Colors.transparent),
                       ),
                       child: Text(
                         '🎓 $college',
                         style: TextStyle(
-                          color: Colors.blue[800],
+                          color: textColor,
                           fontSize: 12,
                         ),
                       ),
@@ -108,7 +122,39 @@ class PostCard extends StatelessWidget {
                 const SizedBox(
                   height: 12,
                 ),
-                Row(
+                if (attachments.isNotEmpty) ...[
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.grey.shade300, width: 1),
+                    ),
+                    clipBehavior: Clip.hardEdge,
+                    child: Image.network(
+                      attachments.first.attachment,
+                      fit: BoxFit.cover,
+                      width: 150,
+                      height: 150,
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress == null) return child;
+                        return Center(
+                          child: CircularProgressIndicator(
+                            value: loadingProgress.expectedTotalBytes != null
+                                ? loadingProgress.cumulativeBytesLoaded /
+                                    loadingProgress.expectedTotalBytes!
+                                : null,
+                          ),
+                        );
+                      },
+                      errorBuilder: (context, error, stackTrace) =>
+                          const Icon(Icons.error),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                ],
+                Wrap(
+                  runSpacing: 5,
                   children: tags
                       .map((tag) => Container(
                             margin: const EdgeInsets.only(right: 5),
@@ -137,10 +183,16 @@ class PostCard extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(
-                      Icons.keyboard_arrow_up_rounded,
-                      size: 24,
-                      color: Colors.green[600],
+                    InkResponse(
+                      radius: 20,
+                      onTap: () {
+                        context.read<HomepageCubit>().upVote(id);
+                      },
+                      child: Icon(
+                        Icons.keyboard_arrow_up_rounded,
+                        size: 24,
+                        color: Colors.green[600],
+                      ),
                     ),
                     const SizedBox(width: 5),
                     Text(
@@ -151,15 +203,21 @@ class PostCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 20),
-                    Icon(
-                      Icons.keyboard_arrow_down_rounded,
-                      size: 24,
-                      color: Colors.red[600],
+                    InkResponse(
+                      radius: 20,
+                      onTap: () {
+                        context.read<HomepageCubit>().downVote(id);
+                      },
+                      child: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        size: 24,
+                        color: Colors.red[600],
+                      ),
                     ),
                     const SizedBox(width: 5),
-                    const Text(
-                      '20',
-                      style: TextStyle(
+                    Text(
+                      disLikes.toString(),
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -171,9 +229,9 @@ class PostCard extends StatelessWidget {
                       color: Colors.grey[800],
                     ),
                     const SizedBox(width: 5),
-                    const Text(
-                      '20',
-                      style: TextStyle(
+                    Text(
+                      comments.length.toString(),
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -186,5 +244,9 @@ class PostCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Color hexToColor(String hex) {
+    return Color(int.parse(hex.replaceFirst('#', '0xFF')));
   }
 }

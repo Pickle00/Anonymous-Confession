@@ -89,6 +89,7 @@ class _CreatePostState extends State<CreatePost> {
                 const SnackBar(
                   margin: EdgeInsets.all(5),
                   duration: Duration(seconds: 2),
+                  backgroundColor: Colors.green,
                   clipBehavior: Clip.antiAlias,
                   behavior: SnackBarBehavior.floating,
                   content: Text(
@@ -128,18 +129,18 @@ class _CreatePostState extends State<CreatePost> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: Colors.blue[50],
-                  ),
-                  child: Text(
-                    '🕵️You\'re posting anonymously. Be respectful.',
-                    selectionColor: Colors.blue[100],
-                  ),
-                ),
+                // Container(
+                //   padding: const EdgeInsets.all(12),
+                //   width: double.infinity,
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(8),
+                //     color: Colors.blue[50],
+                //   ),
+                //   child: Text(
+                //     '🕵️You\'re posting anonymously. Be respectful.',
+                //     selectionColor: Colors.blue[100],
+                //   ),
+                // ),
                 const SizedBox(height: 16),
                 const TextField(
                   decoration: InputDecoration(
@@ -258,13 +259,6 @@ class _CreatePostState extends State<CreatePost> {
                     print('Selected college: $value');
                   },
                 ),
-                // DropdownMenu(
-                //     dropdownMenuEntries: nepalColleges.map((collegeName) {
-                //   return DropdownMenuEntry<String>(
-                //     value: collegeName,
-                //     label: collegeName,
-                //   );
-                // }).toList())
               ],
             ),
           ),

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "535345612257",
+    "project_id": "confesso-8412f",
+    "storage_bucket": "confesso-8412f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535345612257:android:3b9ad16150e04717e0fea0",
+        "android_client_info": {
+          "package_name": "com.example.confesso"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHrXFXgysRrX-S9M81pPx0-bHfZpaesNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

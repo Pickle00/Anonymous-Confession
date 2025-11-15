@@ -1,11 +1,12 @@
+import 'package:confesso/blocs/homepage_cubit/homepage_cubit.dart';
 import 'package:confesso/screens/home/home_fyp.dart';
 import 'package:confesso/screens/notification/notification.dart';
 import 'package:confesso/screens/profile/profile.dart';
 import 'package:confesso/screens/search/search.dart';
 import 'package:confesso/screens/utills/image_path_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,6 +17,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   ValueNotifier<int> selectedIndex = ValueNotifier<int>(0);
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<HomepageCubit>().fetchHomePagePosts();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,11 +99,6 @@ class _HomeScreenState extends State<HomeScreen> {
         height: 20,
         width: 20,
       ),
-      // Icon(
-      //   icon,
-      //   color: isSelected ? Colors.blue[600] : Colors.grey[600],
-      // ),
-
       label: label,
     );
   }

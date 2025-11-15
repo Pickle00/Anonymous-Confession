@@ -17,7 +17,7 @@ class _ProfileState extends State<Profile> {
     'profilePicture': 'https://art.pixilart.com/7aed6ac0ceb9944.png',
     'postContent': 'This is a sample post content. Check it out!.',
     'tags': ['#example', '#flutter'],
-    'college': 'Sample University',
+    'college': 'Hetauda School of Management',
     'likes': 120,
     'comments': [
       {'username': 'JaneDoe', 'comment': 'Great post!'},
@@ -31,7 +31,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_1",
       "username": "StudyBuddy_Mike",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "Stanford University",
+      "college": "Tribhuvan University",
       "postContent":
           "I've been struggling with exam anxiety lately. Anyone else feeling overwhelmed with finals coming up? Looking for some study tips and stress management techniques.",
       "tags": ["#exam", "#mentalhealth", "#stress", "#finals"],
@@ -47,7 +47,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_2",
       "username": "Anonymous_Owl",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "MIT",
+      "college": "Kathmandu University",
       "postContent":
           "Feeling homesick in my first week at campus. Everything feels so different from home. How did you guys cope with the transition?",
       "tags": ["#freshman", "#homesick", "#college", "#newstudent"],
@@ -63,7 +63,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_3",
       "username": "Sarah_M",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "Harvard University",
+      "college": "Pokhara University",
       "postContent":
           "Just finished my organic chemistry midterm and I think I bombed it 😭 Why is this subject so difficult? Any advice for bouncing back?",
       "tags": ["#organicchemistry", "#midterm", "#premed", "#struggle"],
@@ -79,7 +79,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_4",
       "username": "TechGuru_Alex",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "UC Berkeley",
+      "college": "Pulchowk Campus",
       "postContent":
           "Anyone else finding it hard to make friends in college? I'm pretty introverted and all the social events seem overwhelming. Tips for shy people?",
       "tags": ["#introvert", "#friends", "#social", "#shy", "#advice"],
@@ -95,7 +95,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_5",
       "username": "CoffeeAddict_Emma",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "NYU",
+      "college": "Patan Academy of Health Sciences",
       "postContent":
           "I secretly have a crush on my professor, but I'm too shy to say anything. 😳 Is this normal? Has anyone been in a similar situation?",
       "tags": ["#crush", "#professor", "#shy", "#confession"],
@@ -111,7 +111,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_6",
       "username": "BookwormSarah",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "Yale University",
+      "college": "Nepal Law Campus",
       "postContent":
           "Finally finished my thesis after 6 months of research! 📚✨ The relief is real. To anyone working on their thesis - you got this!",
       "tags": [
@@ -133,7 +133,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_7",
       "username": "MathWhiz_Kevin",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "Caltech",
+      "college": "Amrit Science Campus",
       "postContent":
           "Pulled an all-nighter working on my calculus assignment. My brain feels like mush right now 🧠💭 Coffee isn't helping anymore...",
       "tags": ["#allnighter", "#calculus", "#tired", "#coffee", "#math"],
@@ -149,7 +149,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_8",
       "username": "ArtStudent_Lily",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "RISD",
+      "college": "Lalitkala Campus",
       "postContent":
           "Does anyone else feel like they chose the wrong major? I love art but I'm worried about job prospects after graduation. Feeling lost...",
       "tags": ["#art", "#major", "#career", "#doubt", "#future"],
@@ -165,7 +165,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_9",
       "username": "SportsEnthusiast_Jake",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "University of Florida",
+      "college": "Tribhuvan University",
       "postContent":
           "Balancing sports and academics is harder than I thought. Practice takes up so much time and I'm falling behind in my classes. Any student athletes here with advice?",
       "tags": [
@@ -187,7 +187,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_10",
       "username": "InternationalStudent_Ana",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "University of Washington",
+      "college": "Kathmandu University",
       "postContent":
           "Being an international student is tough. Missing home, dealing with cultural differences, and the language barrier in some classes. Anyone else struggling with this?",
       "tags": [
@@ -209,7 +209,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_11",
       "username": "GradStudent_Marcus",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "Princeton University",
+      "college": "Tribhuvan University",
       "postContent":
           "Imposter syndrome is hitting hard in grad school. Everyone seems so much smarter than me. How do you deal with feeling like you don't belong?",
       "tags": [
@@ -231,7 +231,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_12",
       "username": "PartyPlanner_Sophie",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "UCLA",
+      "college": "Shanker Dev Campus",
       "postContent":
           "Organizing a study group for Economics. Anyone interested? We could meet at the library every Tuesday and Thursday evening. Let's ace this class together! 📈",
       "tags": [
@@ -253,7 +253,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_13",
       "username": "NightOwl_David",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "University of Chicago",
+      "college": "Pokhara University",
       "postContent":
           "Can't sleep because of stress about my upcoming presentation. It's 3 AM and I'm still rehearsing. Anyone else have trouble sleeping during stressful times?",
       "tags": ["#insomnia", "#stress", "#presentation", "#anxiety", "#sleep"],
@@ -269,7 +269,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_14",
       "username": "FoodLover_Maria",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "University of Texas",
+      "college": "Tribhuvan University",
       "postContent":
           "Dining hall food is getting old. Anyone know good, cheap places to eat near campus? Budget is tight but I need some variety in my diet!",
       "tags": ["#food", "#budget", "#campus", "#recommendations", "#student"],
@@ -285,7 +285,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_15",
       "username": "TechStartup_Ryan",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "Carnegie Mellon",
+      "college": "Kathmandu University",
       "postContent":
           "Working on a startup idea while in college. It's exciting but also overwhelming. How do you balance entrepreneurship with coursework? Any fellow student entrepreneurs here?",
       "tags": [
@@ -307,7 +307,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_16",
       "username": "EnvironmentActivist_Grace",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "UC Davis",
+      "college": "Agriculture and Forestry University",
       "postContent":
           "Started a campus sustainability initiative! We're trying to reduce plastic waste in dining halls. Who wants to join our green movement? 🌱♻️",
       "tags": [
@@ -329,7 +329,7 @@ class _ProfileState extends State<Profile> {
       "userId": "user_17",
       "username": "MusicMajor_Tyler",
       "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "Berklee College of Music",
+      "college": "Kathmandu Jazz Conservatory",
       "postContent":
           "Just finished composing my first symphony! It took 4 months but I'm finally happy with it. Music majors, what's your biggest creative project this semester? 🎵",
       "tags": [
@@ -346,66 +346,6 @@ class _ProfileState extends State<Profile> {
       "commentCount": 26,
       "isEdited": false
     },
-    {
-      "id": "post_18",
-      "userId": "user_18",
-      "username": "PreLawStudent_Jessica",
-      "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "Georgetown University",
-      "postContent":
-          "LSAT prep is consuming my life. Studying 8 hours a day and still feeling unprepared. Any tips from students who've been through this process?",
-      "tags": ["#LSAT", "#prelaw", "#study", "#law", "#preparation"],
-      "timeAgo": "4d ago",
-      "createdAt": "2025-07-30T09:45:00Z",
-      "likes": 112,
-      "dislikes": 3,
-      "commentCount": 39,
-      "isEdited": false
-    },
-    {
-      "id": "post_19",
-      "userId": "user_19",
-      "username": "PhilosophyStudent_Omar",
-      "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "Columbia University",
-      "postContent":
-          "Having an existential crisis after my Philosophy of Mind class. Do we really have free will? These deep questions are keeping me up at night 🤔",
-      "tags": [
-        "#philosophy",
-        "#existential",
-        "#freewill",
-        "#deepthoughts",
-        "#mind"
-      ],
-      "timeAgo": "6d ago",
-      "createdAt": "2025-07-28T18:20:00Z",
-      "likes": 178,
-      "dislikes": 12,
-      "commentCount": 87,
-      "isEdited": false
-    },
-    {
-      "id": "post_20",
-      "userId": "user_20",
-      "username": "TransferStudent_Zoe",
-      "profilePicture": "https://art.pixilart.com/7aed6ac0ceb9944.png",
-      "college": "Vanderbilt University",
-      "postContent":
-          "Just transferred here and feeling like an outsider. Everyone already has their friend groups established. Any advice for transfer students on making connections?",
-      "tags": [
-        "#transfer",
-        "#newstudent",
-        "#friends",
-        "#social",
-        "#connections"
-      ],
-      "timeAgo": "1w ago",
-      "createdAt": "2025-07-27T14:10:00Z",
-      "likes": 89,
-      "dislikes": 1,
-      "commentCount": 33,
-      "isEdited": false
-    }
   ];
 
   List<Map<String, dynamic>> comments = [
@@ -447,8 +387,8 @@ class _ProfileState extends State<Profile> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 0),
+      body: SingleChildScrollView(
+        // padding: const EdgeInsets.symmetric(horizontal: 0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -471,7 +411,7 @@ class _ProfileState extends State<Profile> {
                           CircleAvatar(
                             radius: 25,
                             backgroundImage: NetworkImage(
-                              _fypData['profilePicture'],
+                              'https://cdn-icons-png.flaticon.com/512/616/616408.png',
                             ),
                           ),
                         ],
@@ -494,23 +434,6 @@ class _ProfileState extends State<Profile> {
                             ),
                           ),
                           const SizedBox(height: 5),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 2, horizontal: 10),
-                            decoration: BoxDecoration(
-                              color: Colors.blue[300],
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Text(
-                              _fypData['college'],
-                              style: const TextStyle(
-                                fontSize: 15,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 5),
-                          const SizedBox(height: 5),
                         ],
                       )
                     ],
@@ -528,17 +451,17 @@ class _ProfileState extends State<Profile> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ProfileStats(
-                            count: '2',
+                            count: '500',
                             textColor: Colors.blue[600],
-                            label: 'Confessions'),
+                            label: 'Upvotes'),
                         ProfileStats(
                             count: '59',
                             textColor: Colors.green[600],
                             label: 'Confessions'),
                         ProfileStats(
-                            count: '2',
+                            count: '10',
                             textColor: Colors.blue[600],
-                            label: 'Confessions'),
+                            label: 'Comments'),
                       ],
                     ),
                   ),
@@ -581,99 +504,97 @@ class _ProfileState extends State<Profile> {
                 valueListenable: selectedIndex,
                 builder: (context, value, _) {
                   return selectedIndex.value == 0
-                      ? Expanded(
-                          child: ListView.builder(
-                            itemCount: userConfessions
-                                .length, // Replace with actual count
-                            itemBuilder: (context, index) {
-                              return UserPost(
-                                postContent: userConfessions[index]
-                                    ['postContent'] as String,
-                                tags: userConfessions[index]['tags']
-                                    as List<String>,
-                                college:
-                                    userConfessions[index]['college'] as String,
-                                timeAgo:
-                                    userConfessions[index]['timeAgo'] as String,
-                                likes: userConfessions[index]['likes'] as int,
-                                commentCount: userConfessions[index]
-                                    ['commentCount'] as int,
-                                isProfileView: true,
-                                onEdit: () {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(content: Text('Edit post')),
-                                  );
-                                },
-                                onDelete: () {
-                                  showDialog(
-                                    context: context,
-                                    builder: (context) => AlertDialog(
-                                      title: const Text('Delete Post'),
-                                      content: const Text(
-                                          'Are you sure you want to delete this post?'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(context),
-                                          child: const Text('Cancel'),
-                                        ),
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                            ScaffoldMessenger.of(context)
-                                                .showSnackBar(
-                                              const SnackBar(
-                                                  content:
-                                                      Text('Post deleted')),
-                                            );
-                                          },
-                                          child: const Text('Delete',
-                                              style:
-                                                  TextStyle(color: Colors.red)),
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                },
-                                onUpvote: () {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(content: Text('Upvoted!')),
-                                  );
-                                },
-                                onComment: () {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                        content: Text('Open comments')),
-                                  );
-                                },
-                                onTap: () {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                        content: Text('Open post details')),
-                                  );
-                                },
-                              );
-                            },
-                          ),
+                      ? ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: userConfessions.length,
+                          itemBuilder: (context, index) {
+                            return UserPost(
+                              postContent: userConfessions[index]['postContent']
+                                  as String,
+                              tags: userConfessions[index]['tags']
+                                  as List<String>,
+                              college:
+                                  // userConfessions[index]['college'] as String,
+                                  'Hetauda School of Management',
+                              timeAgo:
+                                  userConfessions[index]['timeAgo'] as String,
+                              likes: userConfessions[index]['likes'] as int,
+                              commentCount:
+                                  userConfessions[index]['commentCount'] as int,
+                              isProfileView: true,
+                              onEdit: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text('Edit post')),
+                                );
+                              },
+                              onDelete: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    title: const Text('Delete Post'),
+                                    content: const Text(
+                                        'Are you sure you want to delete this post?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(context),
+                                        child: const Text('Cancel'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            const SnackBar(
+                                                content: Text('Post deleted')),
+                                          );
+                                        },
+                                        child: const Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                              onUpvote: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text('Upvoted!')),
+                                );
+                              },
+                              onComment: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Open comments')),
+                                );
+                              },
+                              onTap: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Open post details')),
+                                );
+                              },
+                            );
+                          },
                         )
-                      : Expanded(
-                          child: ListView.builder(
-                            padding: const EdgeInsets.symmetric(vertical: 16),
-                            itemCount: comments.length,
-                            itemBuilder: (context, index) {
-                              final comment = comments[index];
-                              return CommentCard(
-                                timeAgo: comment['timeAgo'],
-                                originalPostQuote: comment['originalPostQuote'],
-                                commentText: comment['commentText'],
-                                upvotes: comment['upvotes'],
-                                isUpvoted: comment['isUpvoted'],
-                                // onUpvote: () => _toggleUpvote(index),
-                                // onEdit: () => _editComment(index),
-                                // onDelete: () => _deleteComment(index),
-                              );
-                            },
-                          ),
+                      : ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          itemCount: comments.length,
+                          itemBuilder: (context, index) {
+                            final comment = comments[index];
+                            return CommentCard(
+                              timeAgo: comment['timeAgo'],
+                              originalPostQuote: comment['originalPostQuote'],
+                              commentText: comment['commentText'],
+                              upvotes: comment['upvotes'],
+                              isUpvoted: comment['isUpvoted'],
+                              // onUpvote: () => _toggleUpvote(index),
+                              // onEdit: () => _editComment(index),
+                              // onDelete: () => _deleteComment(index),
+                            );
+                          },
                         );
                 })
           ],

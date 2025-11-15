@@ -3,6 +3,6 @@ import 'package:confesso/router/router_screens.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: AppRoutes.homeScreen,
+  initialLocation: AppRoutes.onBoardingScreen,
   routes: buildRoutes(),
 );

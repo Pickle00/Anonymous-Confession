@@ -43,11 +43,11 @@ class UserPost extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 2),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
+          // borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),
@@ -64,14 +64,16 @@ class UserPost extends StatelessWidget {
             Row(
               children: [
                 // Profile section (only for non-profile view)
-                if (!isProfileView && username != null && profilePicture != null) ...[
+                if (!isProfileView &&
+                    username != null &&
+                    profilePicture != null) ...[
                   CircleAvatar(
                     backgroundImage: NetworkImage(profilePicture!),
                     radius: 15,
                   ),
                   const SizedBox(width: 10),
                 ],
-                
+
                 // Time and college info
                 Expanded(
                   child: Row(
@@ -87,7 +89,8 @@ class UserPost extends StatelessWidget {
                       if (college != null) ...[
                         const SizedBox(width: 8),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 2),
                           decoration: BoxDecoration(
                             color: const Color(0xFFDBEAFE),
                             borderRadius: BorderRadius.circular(50),
@@ -105,7 +108,7 @@ class UserPost extends StatelessWidget {
                     ],
                   ),
                 ),
-                
+
                 // Action buttons (only for profile view)
                 if (isProfileView) ...[
                   if (onEdit != null)
@@ -134,7 +137,7 @@ class UserPost extends StatelessWidget {
                 ],
               ],
             ),
-            
+
             // Username (only for non-profile view)
             if (!isProfileView && username != null) ...[
               const SizedBox(height: 8),
@@ -146,9 +149,9 @@ class UserPost extends StatelessWidget {
                 ),
               ),
             ],
-            
+
             const SizedBox(height: 12),
-            
+
             // Post content
             Text(
               postContent,
@@ -158,36 +161,39 @@ class UserPost extends StatelessWidget {
               ),
               softWrap: true,
             ),
-            
+
             const SizedBox(height: 12),
-            
+
             // Tags
             if (tags.isNotEmpty) ...[
               Wrap(
                 spacing: 6,
                 runSpacing: 6,
-                children: tags.map((tag) => Container(
-                  padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.grey[400]!,
-                      width: 0.8,
-                    ),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    tag,
-                    style: const TextStyle(
-                      color: Colors.black87,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12,
-                    ),
-                  ),
-                )).toList(),
+                children: tags
+                    .map((tag) => Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 4, horizontal: 10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.grey[400]!,
+                              width: 0.8,
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Text(
+                            tag,
+                            style: const TextStyle(
+                              color: Colors.black87,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ))
+                    .toList(),
               ),
               const SizedBox(height: 12),
             ],
-            
+
             // Interaction buttons
             Row(
               children: [
@@ -213,9 +219,9 @@ class UserPost extends StatelessWidget {
                     ],
                   ),
                 ),
-                
+
                 const SizedBox(width: 16),
-                
+
                 // Downvote (if not profile view)
                 if (!isProfileView) ...[
                   GestureDetector(
@@ -241,7 +247,7 @@ class UserPost extends StatelessWidget {
                   ),
                   const SizedBox(width: 16),
                 ],
-                
+
                 // Comments
                 GestureDetector(
                   onTap: onComment,
